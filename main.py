@@ -6,14 +6,6 @@ from tkcalendar import *
 #>>>>definindo algumas classes
 
 
-
-
-
-
-def cadastrar():
-    global nome, cpf, dataNasc
-    clientes.append(C)
-
 #formatar cpf
 def format_cpf(event=None):
     text = ent2.get().replace(".", "").replace("-", "")[:11]
@@ -120,7 +112,7 @@ def deposito():
     f2.forget()
     f3.pack()
     label2.pack()
-    btdc.place(width=300, height=40, x=400, y=592)
+    btdc.place(width=300, height=50, x=400, y=592)
     val.place(width=137, height=36, x=484, y=288)
     bb3.place(width=26, height=20, x=854, y=5)
 def saque():
@@ -154,6 +146,8 @@ def cad():
     cpf.place(width=402, height=29, x=152, y=425)
     dat.place(width=165, height=19, x=396, y=495)
     bb7.place(width=26, height=20, x=854, y=5)
+    bubu.place(width=168, height=24, x=393, y=491)
+    lub.place(width=173, height=43, x=391, y=523)
 def ver():
     fc.forget()
     f8.pack()
@@ -202,16 +196,20 @@ btn2=Button(f0, text='Login Funcionário', font='Arial 28', bg='#350252', foregr
 imagepx = PhotoImage(file=r"C:\Users\889875\Downloads\nix\2.png")
 #imagepx = PhotoImage(file=r"C:\Users\Arlete\PycharmProjects\Attt\2.png")
 pabelp=Label(fc, image=imagepx)
-btp=Button(fc, text='Verificação', font='Arial 24', bg='#a6033f', foreground='White', command=ver)
-btb=Button(fc, text='Criar uma conta', font='Arial 24', bg='#a6033f', foreground='White', command=cad)
-btv=Button(fc, text='Configurar Contas', font='Arial 24', bg='#a6033f', foreground='White', command=conf)
+imagepxz = PhotoImage(file=r"C:\Users\889875\PycharmProjects\Attt\lacr (1).png")
+imagepxz1 = PhotoImage(file=r"C:\Users\889875\PycharmProjects\Attt\lacr (2) (1).png")
+imageula = PhotoImage(file=r"C:\Users\889875\PycharmProjects\Attt\conf (1).png")
+btp=Button(fc, text='Verificação', font='Arial 24', bg='#a6033f', foreground='White', command=ver, image=imagepxz)
+btb=Button(fc, text='Criar uma conta', font='Arial 24', bg='#a6033f', foreground='White', command=cad, image=imagepxz1)
+btv=Button(fc, text='Configurar Contas', font='Arial 24', bg='#a6033f', foreground='White', command=conf, image=imageula)
 bb=Button(fc, text='<', font='Arial 20', bg='#60078c', foreground='White', command=home1)
 
 #criação dos itens f1
 imagepp= PhotoImage(file=r"C:\Users\889875\Downloads\nix\7.png")
 #imagepp= PhotoImage(file=r"C:\Users\Arlete\PycharmProjects\Attt\7.png")
 labelv=Label(f1, image=imagepp)
-btlo=Button(f1, text='Entrar', font='Arial 24', bg='#5012c4', foreground='White', command=entrar)
+imagepxx = PhotoImage(file=r"C:\Users\889875\PycharmProjects\Attt\IN (2) (1).png")
+btlo=Button(f1, text='Entrar', font='Arial 24', bg='#5012c4', foreground='White', command=entrar,image=imagepxx)
 ent1=Entry(f1, font='Arial 22', bg='#5012c4',foreground='White')
 ent2=Entry(f1, font='Arial 22', bg='#5012c4', foreground='White')
 ent2.bind('<KeyRelease>', format_cpf)
@@ -222,10 +220,14 @@ bb1=Button(f1, text='<', font='Arial 20', bg='#60078c', foreground='White',comma
 imagex= PhotoImage(file=r"C:\Users\889875\Downloads\nix\8.png")
 #imagex= PhotoImage(file=r"C:\Users\Arlete\PycharmProjects\Attt\8.png")
 label1=Label(f2, image=imagex)
-btd=Button(f2, text='Fazer Depósito', font='Arial 24', bg='#d020f7', foreground='White',command=deposito)
-bts=Button(f2, text='Fazer um Saque', font='Arial 22', bg='#d020f7', foreground='White', command=saque)
-bth=Button(f2, text='Ver Historico\nde\nTransações', font='Arial 24', bg='#d020f7', foreground='White', command=histo)
-btt=Button(f2, text='Fazer uma Transferência', font='Arial 22', bg='#d020f7', foreground='White', command=trans)
+imagedas= PhotoImage(file=r"C:\Users\889875\PycharmProjects\Attt\FAZ (1).png")
+btd=Button(f2, text='Fazer Depósito', font='Arial 24', bg='#d020f7', foreground='White',command=deposito, image=imagedas)
+imagedasy= PhotoImage(file=r"C:\Users\889875\PycharmProjects\Attt\his (2) (1).png")
+bts=Button(f2, text='Fazer um Saque', font='Arial 22', bg='#d020f7', foreground='White', command=saque, image=imagedasy)
+imagedasx= PhotoImage(file=r"C:\Users\889875\PycharmProjects\Attt\his (1).png")
+bth=Button(f2, text='Ver Historico\nde\nTransações', font='Arial 24', bg='#d020f7', image=imagedasx, foreground='White', command=histo)
+imagedasz= PhotoImage(file=r"C:\Users\889875\PycharmProjects\Attt\TRANS (1).png")
+btt=Button(f2, text='Fazer uma Transferência', image=imagedasz, font='Arial 22', bg='#d020f7', foreground='White', command=trans)
 labelpp=Label(f2, font='Arial 20', bg='#5012c4', foreground='White')
 labelpb=Label(f2, font='Arial 20', bg='#5012c4', foreground='White')
 bb2=Button(f2, text='<', font='Arial 20', bg='#60078c', foreground='White',command=home1)
@@ -235,8 +237,9 @@ bb2=Button(f2, text='<', font='Arial 20', bg='#60078c', foreground='White',comma
 images= PhotoImage(file=r"C:\Users\889875\Downloads\nix\9.png")
 #images= PhotoImage(file=r"C:\Users\Arlete\PycharmProjects\Attt\9.png")
 label2=Label(f3, image=images)
+imagescs= PhotoImage(file=r"C:\Users\889875\PycharmProjects\Attt\confirmar (2) (1).png")
 val=Entry(f3, font='Arial 16', bg='#f507bd', foreground='White')
-btdc=Button(f3, text='Realizar Depósito', font='Arial 22', bg='#ab0eb0', foreground='White')
+btdc=Button(f3, text='Realizar Depósito', font='Arial 22', bg='#ab0eb0', foreground='White', image=imagescs)
 bb3=Button(f3, text='<', font='Arial 20', bg='#60078c', foreground='White',command=home1)
 
 #criação dos itens f4
@@ -244,7 +247,7 @@ imaged= PhotoImage(file=r"C:\Users\889875\Downloads\nix\10.png")
 #imaged= PhotoImage(file=r"C:\Users\Arlete\PycharmProjects\Attt\10.png")
 label3=Label(f4, image=imaged)
 valp=Entry(f4, font='Arial 16',bg='#f507bd', foreground='White')
-btds=Button(f4, text='Realizar Saque', font='Arial 22', bg='#ab0eb0', foreground='White')
+btds=Button(f4, text='Realizar Saque', font='Arial 22', bg='#ab0eb0', foreground='White', image=imagescs)
 bb4=Button(f4, text='<', font='Arial 20', bg='#60078c', foreground='White',command=home1)
 
 #Criação dos itens f5
@@ -253,7 +256,8 @@ imaget= PhotoImage(file=r"C:\Users\889875\Downloads\nix\11.png")
 label4=Label(f5, image=imaget)
 vao=Entry(f5, font='Arial 16',bg='#f507bd', foreground='White')
 vae=Entry(f5, font='Arial 16',bg='#f507bd', foreground='White')
-btdt=Button(f5, text='Realizar\nTransação', font='Arial 20', bg='#ab0eb0', foreground='White')
+imagetx= PhotoImage(file=r"C:\Users\889875\PycharmProjects\Attt\confirmar (2) (2).png")
+btdt=Button(f5, text='Realizar\nTransação', font='Arial 20', bg='#ab0eb0', foreground='White', image=imagetx)
 bb5=Button(f5, text='<', font='Arial 20', bg='#60078c', foreground='White',command=home1)
 
 #Criação dos itens f6
@@ -268,7 +272,8 @@ bb6=Button(f6, text='<', font='Arial 20', bg='#60078c', foreground='White',comma
 imagec= PhotoImage(file=r"C:\Users\889875\PycharmProjects\Attt\3.png")
 #imagec= PhotoImage(file=r"C:\Users\Arlete\PycharmProjects\Attt\nix.png")
 label6=Label(f7, image=imagec)
-btnc=Button(f7, text='Criar Conta', font='Arial 20', bg='#ab0eb0', foreground='White')
+imagecc= PhotoImage(file=r"C:\Users\889875\PycharmProjects\Attt\conf (2) (1).png")
+btnc=Button(f7, text='Criar Conta', font='Arial 20', bg='#ab0eb0', foreground='White', image=imagecc)
 nome=Entry(f7, font='Arial 20',background='#561fed', foreground='White')
 cpf=Entry(f7, font='Arial 20',background='#561fed', foreground='White')
 cpf.bind('<KeyRelease>', format_cpfF)
@@ -309,16 +314,24 @@ root.bind('<ButtonRelease-1>', lambda arg: Posicionamento.fim_place(arg, root))
 root.bind('<Button-2>', lambda arg: Posicionamento.para_geometry(root))
 
 #data
+
+lub = Label(f7,text='').place(width=173, height=43, x=391, y=523)
 def Dater():
     global cal
     def getDate():
         date=cal.get_date()
         print(date)
     cal.place(width=267, height=204, x=580, y=407)
-    bubub=Button(f7,text='Confirmar Seleção', bg='purple', command=getDate).place(width=168, height=24, x=393, y=491)
+    lub['text']=str()date
+    bubub=Button(f7,text='Confirmar Seleção', bg='purple', activeforeground='Black' , foreground='white', command=getDate).place(width=168, height=24, x=393, y=491)
+
 cal=Calendar(f7, selectmode='day', date_pattern="dd-mm-y")
-bubu=Button(f7, text='Selecione uma Data', command=Dater).place(width=168, height=24, x=393, y=491)
-print(Dater())
+bubu=Button(f7, text='Confirmar Seleção', command=Dater)
+
+lub = Label(f7,text=cal.get_date(),foreground='white', bg='black')
+
+
+
 
 #rodando
 f0.pack()
