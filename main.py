@@ -174,7 +174,8 @@ root.title('NIX')
 root.geometry('400x200+100+500')
 root.minsize(width=1023, height=755)
 root.maxsize(width=1023, height=755)
-root.config(bg=('white'))
+root.config(bg=('white'), cursor='box_spiral', highlightbackground='blue')
+
 
 #criação dos frames
 f0=Frame(root, bg='Black', border=0)
@@ -214,10 +215,10 @@ imagepp= PhotoImage(file=r"C:\Users\889875\Downloads\nix\7.png")
 labelv=Label(f1, image=imagepp)
 imagepxx = PhotoImage(file=r"C:\Users\889875\PycharmProjects\Attt\IN (2) (1).png")
 btlo=Button(f1, text='Entrar', font='Arial 24', bg='#5012c4', foreground='White', command=entrar,image=imagepxx)
-ent1=Entry(f1, font='Arial 22', bg='#5012c4',foreground='White')
-ent2=Entry(f1, font='Arial 22', bg='#5012c4', foreground='White')
+ent1=Entry(f1, font='Arial 22', bg='#5012c4',foreground='White', insertbackground='#250b73')
+ent2=Entry(f1, font='Arial 22', bg='#5012c4', foreground='White',insertbackground='#250b73')
 ent2.bind('<KeyRelease>', format_cpf)
-ent3=Entry(f1, font='Arial 22', bg='#5012c4', foreground='White')
+ent3=Entry(f1, font='Arial 22', bg='#5012c4', foreground='White', insertbackground='#250b73')
 bb1=Button(f1, text='<', font='Arial 20', bg='#60078c', foreground='White',command=home1)
 
 #Criação dos itens f2
@@ -242,7 +243,7 @@ images= PhotoImage(file=r"C:\Users\889875\Downloads\nix\9.png")
 #images= PhotoImage(file=r"C:\Users\Arlete\PycharmProjects\Attt\9.png")
 label2=Label(f3, image=images)
 imagescs= PhotoImage(file=r"C:\Users\889875\PycharmProjects\Attt\confirmar (2) (1).png")
-val=Entry(f3, font='Arial 16', bg='#f507bd', foreground='White')
+val=Entry(f3, font='Arial 16', bg='#f507bd', foreground='White', insertbackground='#f7233b')
 btdc=Button(f3, text='Realizar Depósito', font='Arial 22', bg='#ab0eb0', foreground='White', image=imagescs)
 bb3=Button(f3, text='<', font='Arial 20', bg='#60078c', foreground='White',command=home1)
 
@@ -250,7 +251,7 @@ bb3=Button(f3, text='<', font='Arial 20', bg='#60078c', foreground='White',comma
 imaged= PhotoImage(file=r"C:\Users\889875\Downloads\nix\10.png")
 #imaged= PhotoImage(file=r"C:\Users\Arlete\PycharmProjects\Attt\10.png")
 label3=Label(f4, image=imaged)
-valp=Entry(f4, font='Arial 16',bg='#f507bd', foreground='White')
+valp=Entry(f4, font='Arial 16',bg='#f507bd', foreground='White', insertbackground='#f7233b')
 btds=Button(f4, text='Realizar Saque', font='Arial 22', bg='#ab0eb0', foreground='White', image=imagescs)
 bb4=Button(f4, text='<', font='Arial 20', bg='#60078c', foreground='White',command=home1)
 
@@ -258,7 +259,7 @@ bb4=Button(f4, text='<', font='Arial 20', bg='#60078c', foreground='White',comma
 imaget= PhotoImage(file=r"C:\Users\889875\Downloads\nix\11.png")
 #imaget= PhotoImage(file=r"C:\Users\Arlete\PycharmProjects\Attt\11.png")
 label4=Label(f5, image=imaget)
-vao=Entry(f5, font='Arial 16',bg='#f507bd', foreground='White')
+vao=Entry(f5, font='Arial 16',bg='#f507bd', foreground='White', insertbackground='#f7233b')
 vae=Entry(f5, font='Arial 16',bg='#f507bd', foreground='White')
 imagetx= PhotoImage(file=r"C:\Users\889875\PycharmProjects\Attt\confirmar (2) (2).png")
 btdt=Button(f5, text='Realizar\nTransação', font='Arial 20', bg='#ab0eb0', foreground='White', image=imagetx)
@@ -345,3 +346,44 @@ label.pack()
 btn.place(width=183, height=65, x=627, y=225)
 btn2.place(width=305, height=73, x=583, y=574)
 root.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#tkinter.messagebox.showinfo
