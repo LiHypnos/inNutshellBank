@@ -1,17 +1,16 @@
-
+from tkinter import *
 import random
+import tkinter as tk
+from tkcalendar import *
 
-# n tanko documentar saq td n
-    #tem o minimo de documentaçãoe
-    #porem tae mais so pra n se perder
-    #doq pra realmente documentar
-# confia q eu entendo
-# pode tentra quebrar o codigo ae
-# godsorte
 
-# pesoa
-#
-# classe parente
+#criação da janela principal
+root=Tk()
+root.title('ITO´s FEAR')
+root.minsize(width=1023, height=755)
+root.resizable(False, False)
+root.config(bg='light blue')
+
 
 class pessoa:
 
@@ -86,91 +85,79 @@ class cria:
     contagem = 0
 
     # menu
+f1=Frame(root,bg='blue')
+labelInicial= Label(root, text='Login')
+botaoLogin= Button(root, text='Entrar', command=menu)
+entNome= Entry(f1,bg='light blue')
 
-    @classmethod
-    def menu(cls):
-        while True:
-            try:
-                print("\n------------------------------------------------------------------------------------")
-                print("\n 1 - Criar Cadastro")
-                print(" 2 - Acessar Conta")
-                print(" 3 - Finalizar Programa")
 
-                inpute = input("\n   ==   ")
-
-                if inpute == "1":
-                    cria.criacao()
-                elif inpute == "2":
-                    cria.login()
-                elif inpute == "3":
-                    print("\n------------------------------------------------------------------------------------")
-                    break
-                else:
-                    print("\n Input Invalido --")
-                    continue
-            except:
-                print("\n Input Invalido --")
-                continue
+def menu():
+    f1.pack()
+    entNome.pack()
+    cria.criacao()
+            #elif inpute == "2":
+                    #cria.login()
+                #elif inpute == "3":
+                    #print("\n------------------------------------------------------------------------------------")
+                    #break
+                #else:
+                    #print("\n Input Invalido --")
+                    #continue
+            #except:
+                #print("\n Input Invalido --")
+                #continue
 
     # criacao
 
-    @classmethod
-    def criacao(cls):
 
-        print("\n------------------------------------------------------------------------------------")
+def criacao(cls):
 
-        # Nome
-        print("\n Nome __")
-        name = str(input("\n   ==   "))
-        print("\n //////////////////////////////////////////////////////")
+    print("\n------------------------------------------------------------------------------------")
 
-        # CPF
-        print("\n CPF __")
-        while True:
-            while True:
-                try:
-                    cpf = int(input("\n   ==   "))
-                    cpf = str(cpf)
-                    break
-                except:
-                    print("\n Somente Numeros--")
-                    continue
-            if len(cpf) == 11:
-                cpf = ("{}.{}.{}-{}".format(cpf[0:3],cpf[3:6],cpf[6:9],cpf[9:11]))
-                break
-            else:
-                print("\n Cpf Invalido --")
-        print("\n //////////////////////////////////////////////////////")
+    # Nome
+    print("\n Nome __")
+    name = str(input("\n   ==   "))
+    print("\n //////////////////////////////////////////////////////")
 
-        # Nascimento
-        print("\n Nascimento __")
+    # CPF
+    print("\n CPF __")
+    while True:
         while True:
             try:
-                while True:
-                    print("\nDia : ")
-                    dia = int(input("\n   ==   "))
-                    if dia in range(1, 31):
-                        break
-                    else:
-                        print("\n Dia Invalido")
-                while True:
-                    print("\nMes : ")
-                    mes = int(input("\n   ==   "))
-                    if mes in range(1, 13):
-                        break
-                    else:
-                        print("\n Mes Invalido")
+                cpf = int(input("\n   ==   "))
+                cpf = str(cpf)
+                break
+            except:
+                print("\n Somente Numeros--")
+                continue
+        if len(cpf) == 11:
+            cpf = ("{}.{}.{}-{}".format(cpf[0:3],cpf[3:6],cpf[6:9],cpf[9:11]))
+    break
+
+
+        # Nascimento
+    print("\n Nascimento __")
+    while True:
+        try:
+            while True:
+                print("\nDia : ")
+                dia = int(input("\n   ==   "))
+                if dia in range(1, 31):
+                    break
+                else:
+                    print("\n Dia Invalido")
+            while True:
+                print("\nMes : ")
+                mes = int(input("\n   ==   "))
+                if mes in range(1, 13):
+                    break
+                else:
+                    print("\n Mes Invalido")
                 print("\nAno : ")
                 ano = int(input("\n   ==   "))
                 nascimento = ("{}/{}/{}".format(dia, mes, ano))
                 break
-            except:
-                print("\n Sommente Numeros-- \n Repita Tudo --")
 
-                continue
-
-        cria.create(name,cpf,nascimento)
-        cria.acesso(cria.contagem-1)
 
     # login
 
@@ -388,3 +375,6 @@ cria.lista[0].senha = 1
 cria.create("admin2","10.987.654.321","01/01/01")
 cria.lista[1].senha = 2
 cria.menu()
+root.mainloop()
+labelInicial.pack()
+botaoLogin.pack
