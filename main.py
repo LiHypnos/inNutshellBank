@@ -319,16 +319,18 @@ lub = Label(f7,text='').place(width=173, height=43, x=391, y=523)
 def Dater():
     global cal
     def getDate():
+        global lub
         date=cal.get_date()
         print(date)
+        lub['text']=date
     cal.place(width=267, height=204, x=580, y=407)
-    lub['text']=str()date
+
     bubub=Button(f7,text='Confirmar Seleção', bg='purple', activeforeground='Black' , foreground='white', command=getDate).place(width=168, height=24, x=393, y=491)
 
 cal=Calendar(f7, selectmode='day', date_pattern="dd-mm-y")
 bubu=Button(f7, text='Confirmar Seleção', command=Dater)
 
-lub = Label(f7,text=cal.get_date(),foreground='white', bg='black')
+lub = Label(f7,text=cal.get_date(),foreground='white', bg='#47023c')
 
 
 
