@@ -8,10 +8,12 @@ from tkcalendar import *
 
 #formatar cpf
 def format_cpf(event=None):
+
+
     text = ent2.get().replace(".", "").replace("-", "")[:11]
     new_text = ""
 
-    if event.keysym.lower() == "backspace": return
+    if event.keysym == "backspace": return
 
     for index in range(len(text)):
 
@@ -27,6 +29,8 @@ def format_cpf(event=None):
     ent2.insert(0, new_text)
 
 def format_cpfF(event=None):
+
+
     text = cpf.get().replace(".", "").replace("-", "")[:11]
     new_text = ""
 
